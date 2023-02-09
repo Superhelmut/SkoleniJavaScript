@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Produkt
+        {
+            nazev;
+            cena;
+
+            constructor(nazev, cena)
+            {
+                this.nazev = nazev;
+                this.cena = cena;
+            }
+        }
+
+        class Televize extends Produkt
+        {
+            uhlopricka;
+            rozliseni;
+
+            constructor(nazev, cena, uhlopricka, rozliseni)
+            {
+                // zavolani konstruktoru rodicovske tridy
+                super(nazev, cena);
+                this.uhlopricka = uhlopricka;
+                this.rozliseni = rozliseni;
+            }
+        }
+
+        const telka = new Televize("Samsung", 9999, 40, '4K');
+        console.log(telka);
+    </script>
+</body>
+</html>

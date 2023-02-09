@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const pocetObyvatelPodleMesta = {
+            "Praha" : 1000000,
+            "České Budějovice" : 100000,
+        };
+        console.log(pocetObyvatelPodleMesta);
+
+        const pocetLidiVPraze = pocetObyvatelPodleMesta["Praha"];
+        console.log(`Počet lidí v praze ${pocetLidiVPraze}`);
+
+        console.log(`Počet lidí v praze ${pocetObyvatelPodleMesta["Praha"]}`);
+
+        const pocetLidiVPraze2 = pocetObyvatelPodleMesta.Praha;
+        console.log(`Počet lidí v praze ${pocetLidiVPraze2}`);
+
+        // pridani polozky
+        pocetObyvatelPodleMesta["Brno"] = 500000;
+        pocetObyvatelPodleMesta.Brno = 500000;
+        console.log(pocetObyvatelPodleMesta);
+
+        // odstraneni polozky
+        delete pocetObyvatelPodleMesta["Brno"];
+        console.log(pocetObyvatelPodleMesta);
+
+        // prochazeni struktury
+        // pomoci for/in
+        for (const mesto in pocetObyvatelPodleMesta)
+        {
+            const pocetObyvatel = pocetObyvatelPodleMesta[mesto];
+            console.log(`Počet obyvatel v ${mesto} je ${pocetObyvatel}`);
+        }
+
+        // pomoci for/of s Object.entries
+        for (const [mesto, pocetObyvatel] of Object.entries(pocetObyvatelPodleMesta))
+        {
+            console.log(`Počet obyvatel v ${mesto} je ${pocetObyvatel}`);
+        }
+    </script>
+</body>
+</html>

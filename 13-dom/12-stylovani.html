@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            transition: all 0.5s ease-in;
+        }
+        h1.velky {
+            font-size: 80px;
+            color: green;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <h1 class="cokoliv">Nadpis</h1>
+
+    <i id="baterie" class="fa-solid fa-battery-empty"></i>
+    <button id="nabito">Nabito</button>
+    <button id="vybito">Vybito</button>
+
+    <script>
+        const nadpis = document.querySelector("h1");
+
+        //nadpis.style = "color: red; font-size: 50px;";
+
+        /*nadpis.style.color = "red";
+        nadpis.style.fontSize = "50px";
+
+        nadpis.style.textDecoration = "underline";*/
+
+        nadpis.addEventListener("click", (udalost) => {
+            // nastaveni tridy pomoci className = jako atribut class (kompletni string)
+            //nadpis.className = "velky";
+
+            nadpis.classList.toggle("velky");
+        });
+
+        const nabito = document.querySelector("#nabito");
+        const vybito = document.querySelector("#vybito");
+        const baterie = document.querySelector("#baterie");
+
+        nabito.addEventListener("click", (udalost) => {
+            baterie.className = "fa-solid fa-battery-full";
+        });
+        vybito.addEventListener("click", (udalost) => {
+            baterie.className = "fa-solid fa-battery-empty";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		class auto
+		{
+			znacka;
+			rokVyroby;
+
+			stariVozu ()
+			{
+				const aktualniCas = new Date;
+				const rok = aktualniCas.getFullYear();
+				const stari = rok - this.rokVyroby;
+				return stari;
+			}
+
+			constructor(znacka, rokVyroby)
+			{
+				this.znacka = znacka;
+				this.rokVyroby = rokVyroby;
+			}
+		}
+
+		class spalovaci extends auto
+		{
+			palivo;
+
+			constructor (znacka, rokVyroby, palivo)
+			{
+				super(znacka, rokVyroby);
+				this.palivo = palivo;
+			}
+
+		}
+
+		class elektro extends auto
+		{
+			kapacita;
+
+			constructor (znacka, rokVyroby, kapacita)
+			{
+				super(znacka, rokVyroby);
+				this.kapacita = kapacita;
+			}
+		}
+
+		const skoda = new spalovaci("Škoda", 2005, "nafta");
+
+		const tesla = new elektro ("Tesla", 2015, 140);
+
+		const auta = [skoda, tesla];
+
+		for (const vypis of auta)
+		{
+			console.log(vypis.znacka, vypis.rokVyroby, vypis.stariVozu(), vypis.palivo, vypis.kapacita);
+		}
+	</script>
+</body>
+</html>

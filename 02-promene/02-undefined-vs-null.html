@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let jmeno; // v tento moment je hodnota promenna undefined
+        jmeno = "Petr";
+        jmeno = null; // vynulovani jmena
+        alert(jmeno);
+
+        // vytvoreni pole jmen
+        let jmena = ["Petr", "Pavel"];
+        alert(jmena[0]); // vypsani prvniho jmena
+        alert(jmena[999]); // vypsani 1000. jmena
+
+        alert(typeof jmena[8] == "undefined"); // true
+    </script>
+</body>
+</html>

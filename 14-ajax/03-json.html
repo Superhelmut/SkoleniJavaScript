@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Zjisti seznam uživatelů</button>
+
+    <script>
+        const tlacitko = document.querySelector("button");
+
+        tlacitko.addEventListener("click", (udalost) => {
+            alert("Jdu zjistit uživatele ze serveru");
+
+            const ajax = new XMLHttpRequest();
+
+            ajax.open("GET", "https://jsonplaceholder.typicode.com/users");
+
+            ajax.addEventListener("readystatechange", (udalost) => {
+                if (ajax.readyState == 4)
+                {
+                    const odpoved = ajax.responseText;
+
+                    const uzivatele = JSON.parse(odpoved);
+                    console.log(uzivatele);
+
+                    for (const uzivatel of uzivatele)
+                    {
+                        console.log(uzivatel.address.street);
+                    }
+                }
+            });
+
+            ajax.send();
+        });
+    </script>
+</body>
+</html>

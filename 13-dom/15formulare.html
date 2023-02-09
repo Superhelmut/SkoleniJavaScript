@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <div>
+            Jméno:
+            <input type="text" name="jmeno" id="">
+        </div>
+
+        <div>
+            Pohlaví:
+            <select name="pohlavi">
+                <option value="">Vyberte</option>
+                <option value="muz">Muž</option>
+                <option value="zena">Žena</option>
+            </select>
+        </div>
+
+        <div>
+            Souhlasím s Lorem ipsum dolor sit amet.
+            <input type="checkbox" name="souhlasim" id="">
+        </div>
+
+        <div>
+            <button name="odeslat">Odeslat</button>
+        </div>
+    </form>
+
+    <script>
+        const formular = document.querySelector('form');
+        const jmeno = document.querySelector('[name="jmeno"]');
+        const pohlavi = document.querySelector('[name="pohlavi"]');
+        const souhlasim = document.querySelector('[name="souhlasim"]');
+
+        formular.addEventListener("submit", (udalost) => {
+            //alert("Formulář se bude odesílat");
+
+
+            // zjistime hodnotu jmena
+            const jmenoVyplneno = jmeno.value;
+            console.log(jmenoVyplneno);
+
+            // zjistime pohlavi
+            const pohlaviVyplneno = pohlavi.value;
+            console.log(pohlaviVyplneno);
+
+            // zjistime checkbox souhlasim
+            const souhlasimVyplneno = souhlasim.checked;
+            console.log(souhlasimVyplneno);
+
+            if (jmenoVyplneno.length > 0 && pohlaviVyplneno.length > 0 && souhlasimVyplneno)
+            {
+                // ok - nechame formular odeslat
+            }
+            else
+            {
+                // zrusime odeslani formulare, aby nedoslo
+                //  k reloadu stranku
+                udalost.preventDefault();
+                alert("Formulář není zcela vyplněn");
+            }
+        });
+
+        pohlavi.addEventListener("change", (udalost) => {
+            alert(`Vybrané pohlaví ${pohlavi.value}`);
+        });
+        jmeno.addEventListener("input", (udalost) => {
+            console.log(`Jméno ${jmeno.value}`);
+        });
+    </script>
+</body>
+</html>

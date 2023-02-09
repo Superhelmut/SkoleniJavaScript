@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kostky</title>
+</head>
+<body>
+	<style>
+		.kostky{
+			font-size: 250px;
+		}
+		h1{
+			font-size: 50px;
+		}
+
+		.vyhra{
+			color: green;
+		}
+
+		.prohra{
+			color: red;
+		}
+	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<p>Stiskem myši spustíte nebo zastavíte.</p>
+	<div class="kostky">
+		<i id="kostka1" class="fa-solid fa-dice-one"></i>
+		<i id="kostka2" class="fa-solid fa-dice-one"></i>
+	</div>
+
+	<h1 id="vysledek" class=""></h1>
+
+	<script>
+		const kostka1 = document.querySelector("#kostka1");
+		const kostka2 = document.querySelector("#kostka2");
+		const vysledek = document.querySelector("#vysledek");
+		const zastaveni = document.querySelector("#kostky");
+		let nahodneCislo;
+		let nahodneCislo2;
+		let casovac;
+		let klik = 0;
+
+
+		const kostky = {
+			0: "fa-solid fa-dice-one",
+			1: "fa-solid fa-dice-two",
+			2: "fa-solid fa-dice-three",
+			3: "fa-solid fa-dice-four",
+			4: "fa-solid fa-dice-five",
+			5: "fa-solid fa-dice-six"
+		};
+
+		document.addEventListener("click", (udalost) => {
+
+			klik++;
+			const suda = klik % 2;
+			if(suda == 1)
+			{
+
+				casovac = setInterval(() => {
+					nahodneCislo = Math.floor(Math.random() * 6);
+					nahodneCislo2 = Math.floor(Math.random() * 6);
+					kostka1.className = kostky[nahodneCislo];
+					kostka2.className = kostky[nahodneCislo2];
+						
+				},700)
+			}
+			else
+			{
+				clearInterval(casovac);
+					if(nahodneCislo == nahodneCislo2)
+					{
+						vysledek.innerText = "Výhra";
+						vysledek.className = "vyhra";
+					}
+					else
+					{
+						vysledek.innerText = "Prohra";
+						vysledek.className = "prohra";
+					}			
+			}
+		})
+			
+
+	</script>
+</body>
+</html>

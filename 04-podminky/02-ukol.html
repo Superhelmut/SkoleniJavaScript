@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let vek = prompt("zadejte svůj věk:")
+		let zbyva = vek % 10;
+		let kulatiny = 10 - zbyva;
+		
+		if(kulatiny == 0)
+		{
+			alert("Slavíme!")
+		}
+		else if(kulatiny == 1)
+		{
+			alert (`Do kulatin zbýva: ${kulatiny} rok`);
+		}
+		else if (kulatiny > 1 && kulatiny <= 4)
+		{
+			alert (`Do kulatin zbýva: ${kulatiny} roky`);
+		}
+		else if (kulatiny > 4 && kulatiny <= 9)
+		{
+			alert (`Do kulatin zbýva: ${kulatiny} let`);
+		}
+	</script>
+</body>
+</html>

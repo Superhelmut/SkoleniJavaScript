@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border=1>
+        <tr>
+            <td>Lorem, ipsum.</td>
+            <td>Incidunt, optio.</td>
+        </tr>
+        <tr>
+            <td>Lorem, ipsum.</td>
+            <td>At, veritatis?</td>
+        </tr>
+        <tr>
+            <td>Lorem, ipsum.</td>
+            <td>Iusto, reiciendis.</td>
+        </tr>
+        <tr>
+            <td>Lorem, ipsum.</td>
+            <td>In, corporis!</td>
+        </tr>
+        <tr>
+            <td>Lorem, ipsum.</td>
+            <td>Sed, enim?</td>
+        </tr>
+        <tr>
+            <td>Lorem, ipsum.</td>
+            <td>Labore, commodi.</td>
+        </tr>
+        <tr>
+            <td>Lorem, ipsum.</td>
+            <td>Voluptatum, tempora.</td>
+        </tr>
+        <tr>
+            <td>Lorem, ipsum.</td>
+            <td>Minus, rem.</td>
+        </tr>
+        <tr>
+            <td>Lorem, ipsum.</td>
+            <td>Sapiente, corrupti?</td>
+        </tr>
+        <tr>
+            <td>Lorem, ipsum.</td>
+            <td>Ducimus, illum.</td>
+        </tr>
+    </table>
+
+    <script>
+        const radky = document.querySelectorAll("tr");
+        let cisloRadky = 1;
+        for (const radka of radky)
+        {
+            if (cisloRadky % 2 == 1)
+            {
+                radka.style.backgroundColor = 'lightgrey';
+            }
+            cisloRadky++;
+        }
+    </script>
+</body>
+</html>

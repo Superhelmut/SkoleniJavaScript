@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const mesice = ["leden", "únor"];
+        console.log(mesice);
+
+        const druhyMesic = mesice[1];
+        console.log(`Druhý měsíc je ${druhyMesic}`);
+
+        // pridavani polozek
+        mesice.push("březen");
+        mesice.push("duben");
+        console.log(mesice);
+
+        // odebirani polozek
+        // odebrat treti mesic
+        mesice.splice(2 /*od ktery mazat*/, 1 /*kolik smazat*/);
+        console.log(mesice);
+
+        // prochazeni pole
+        for (let index = 0; index < mesice.length; index++)
+        {
+            const mesic = mesice[index];
+            console.log(`${index+1}. měsíc v roce je ${mesic}`);
+        }
+
+        // prochazeni pomoci for/of
+        // foreach ($mesice as $mesic) - php
+        for (const mesic of mesice)
+        {
+            console.log(mesic);
+        }
+
+        // foreach ($mesice as $index => $mesic) - php
+        for (const [index, mesic] of Object.entries(mesice))
+        {
+            console.log(`${+index+1}. měsíc v roce je ${mesic}`);
+        }
+    </script>
+</body>
+</html>

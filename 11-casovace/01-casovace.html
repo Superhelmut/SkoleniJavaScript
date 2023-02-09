@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function pozdravMe()
+        {
+            alert("Ahoj!");
+        }
+
+        // vytvoreni casovace
+        setTimeout(pozdravMe, 3000);
+
+        console.log("ja bezim dal");
+
+        function vypisKolikJeHodin()
+        {
+            const cas = new Date();
+            console.log(`${cas.getHours()}:${cas.getMinutes()}:${cas.getSeconds()}`);
+        }
+
+        // vytvoreni opakovaneho casovace
+        const casovac = setInterval(vypisKolikJeHodin, 1000);
+
+        function ukonciCasovac()
+        {
+            clearInterval(casovac);
+        }
+
+        setTimeout(ukonciCasovac, 10000);
+    </script>
+</body>
+</html>

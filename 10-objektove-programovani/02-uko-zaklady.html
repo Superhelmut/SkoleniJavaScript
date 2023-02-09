@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		class auto
+		{
+			znacka;
+			rokVyroby;
+		}
+
+		const skoda = new auto();
+		skoda.znacka = "Škoda";
+		skoda.rokVyroby = "2005";
+
+		const tesla = new auto ();
+		tesla.znacka = "Tesla";
+		tesla.rokVyroby = "2015";
+
+		const auta = [skoda, tesla];
+
+		for (const vypis of auta)
+		{
+			console.log(vypis.znacka, vypis.rokVyroby);
+		}
+	</script>
+</body>
+</html>

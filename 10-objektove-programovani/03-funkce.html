@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Produkt
+        {
+            nazev;
+            cena; // cena bez dph
+            dph; // procentualni sazba
+
+            cenaSDph()
+            {
+                return this.cena * (1 + this.dph / 100);
+            }
+        }
+
+        const telefon = new Produkt();
+        telefon.nazev = "iPhone";
+        telefon.cena = 10000;
+        telefon.dph = 21;
+
+        console.log(`Cena telefonu s dph je ${telefon.cenaSDph()}`);
+    </script>
+</body>
+</html>

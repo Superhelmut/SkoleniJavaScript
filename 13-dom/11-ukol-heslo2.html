@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<div class="obal">
+		<label for="">Heslo:</label> <br>
+		<input type="password" id="heslo">
+		<img id="zobrazit" src="https://cdn0.iconfinder.com/data/icons/zondicons/20/view-hide-256.png" alt="" height="20">
+	</div>
+	<style>
+		.obal {
+			display: grid;
+			grid-template-areas: "obsah";
+			width: 200px;
+
+		}
+		.obal input{
+			grid-area: obal2;
+		}
+		.obal img{
+			grid-area: obal2;
+			justify-self: right;
+			align-self: center;
+			margin-right: 5px;
+		}
+	</style>
+	
+	<script>
+        const zobrazit = document.getElementById("zobrazit");
+		const nadpis = document.getElementById("h1");
+		const heslo = document.getElementById("heslo");
+
+
+		tlacitko = document.addEventListener("mousedown", (udalost) => {
+
+			heslo.type = "text";
+			zobrazit.src = "https://cdn2.iconfinder.com/data/icons/picol-vector/32/view-256.png";
+
+			
+		});
+		tlacitko = document.addEventListener("mouseup", (udalost) => {
+			heslo.type = "password";
+			zobrazit.src = "https://cdn0.iconfinder.com/data/icons/zondicons/20/view-hide-256.png";
+
+		})
+
+
+	</script>
+	
+	
+</body>
+</html>

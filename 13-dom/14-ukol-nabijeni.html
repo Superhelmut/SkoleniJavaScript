@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <i id="baterie" class="fa-solid fa-battery-empty"></i>
+	
+	<script>
+
+			const baterie = document.querySelector("#baterie");
+			let uroven = 0;
+			const urovne = {
+				0: "fa-solid fa-battery-empty",
+				1: "fa-solid fa-battery-quarter",
+				2: "fa-solid fa-battery-half",
+				3: "fa-solid fa-battery-three-quarters",
+				4: "fa-solid fa-battery-full"
+
+			};
+
+			setInterval(() => {
+				uroven++;
+				if(uroven == 5)
+				{
+					uroven = 0;
+				}
+				baterie.className = urovne[uroven];
+
+				console.log(uroven);
+
+			}, 500)
+
+
+
+	</script>
+
+</body>
+</html>

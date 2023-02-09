@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="test1">Test 1</button>
+    <button class="test2">Test 2</button>
+
+    <ul>
+        <li>Lorem, ipsum.</li>
+        <li>Rem, quos.</li>
+        <li>Ullam, obcaecati.</li>
+        <li>Reiciendis, iste.</li>
+        <li>Est, magnam.</li>
+    </ul>
+
+    <script>
+        const tlacitko1 = document.getElementById("test1");
+        console.log(tlacitko1);
+        tlacitko1.style.color = "red";
+
+        const tlacitko2 = document.querySelector(".test2");
+        tlacitko2.style.color = "green";
+
+        const polozky = document.querySelectorAll("li");
+        for (const polozka of polozky)
+        {
+            polozka.style.color = "blue";
+        }
+    </script>
+</body>
+</html>
